@@ -1,0 +1,71 @@
+\documentclass{article}  %link do tworzenia tabeli https://tablesgenerator.com/
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{diagbox}
+\usepackage{amsmath}
+
+\geometry{margin=0.5in}
+
+\begin{document}
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|c|c|c|}
+\hline
+\begin{tabular}[c]{@{}c@{}}Byczko Maciej\\Malek Jan\\Maziec Michał\end{tabular}&
+\begin{tabular}[c]{@{}c@{}}Prowadzący:\\ Mgr Inż. Monika Prucnal\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}Numer ćwiczenia\\
+%----------------------------------------
+    1 %<<<tutaj wpisz numer ćwiczenia
+%----------------------------------------
+\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}c@{}}Grupa nr.\\
+%----------------------------------------
+    1 %<<<tutaj wpisz numer grupy
+%----------------------------------------    
+\end{tabular} & \begin{tabular}[c]{@{}c@{}}Temat ćwiczenia:\\
+%----------------------------------------
+    Oscyloskop %<<< tutaj wpisz temat
+%----------------------------------------    
+\end{tabular}&Ilość punktów: \\ \hline\begin{tabular}[c]{@{}c@{}}Tydzień Nieparzysty\\ Godzina 11:15-13:00\end{tabular}&\begin{tabular}[c]{@{}c@{}}Data:\\
+%----------------------------------------
+10 marca 2020 %<<<tutaj wpisz datę
+%----------------------------------------
+\end{tabular} &\\ \hline\end{tabular}}\end{table}
+% \begin{comment}
+% w części teoretycznej należy zawrzeć tutaj krótki wstęp teoretyczny,spis przyrządów, opis przebiegu doświadczenia, najlepiej w punktach
+% \end{comment}
+\section{Część teoretyczna i opisowa}
+\subsection{cel ćwiczenia}
+\subsection{wstęp teoretyczny}
+\subsection{spis przyrządów}
+\subsection{przebieg ćwiczenia}
+\subsection{wzory}
+\clearpage
+\section{Pomiary i obliczenia}
+\subsection{Pomiary}
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\begin{tabular}[c]{@{}c@{}}
+\diagbox[height=3em,width=12em]{ Nr. Pomiaru}{Wartość napięcia}\end{tabular} 
+& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+1V  & 1.4 & 1.5 & 1.6 & 1.7 & 1.8 & 1.9 & 2   & 2.1 & 2.2 & 2.3 \\ \hline
+3V  & 1.7 & 1.8 & 1.9 & 2   & 2.1 & 2.2 & 2.3 & 2.4 & 2.5 & 2.6 \\ \hline
+5V  & 2.8 & 2.9 & 3   & 3.1 & 3.2 & 3.3 & 3.4 & 3.5 & 3.6 & 3.7 \\ \hline
+10V & 3   & 3.1 & 3.2 & 3.3 & 3.4 & 3.5 & 3.6 & 3.7 & 3.8 & 3.9 \\ \hline
+12V & 3.5 & 3.6 & 3.7 & 3.8 & 3.9 & 4   & 4.1 & 4.2 & 4.3 & 4.4 \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Obliczenia}
+\section{Wyniki i Wnioski}
+\end{document}
