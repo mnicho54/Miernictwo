@@ -2,7 +2,7 @@
 %symbole matematyczne: https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
 %narzedzia matematyczne: https://en.wikibooks.org/wiki/LaTeX/Mathematics
 %krótkie podpowiedzi http://www.mif.pg.gda.pl/homepages/sylas/students/wdi/doc/latex-sciaga.html
-\documentclass{article}  %typ dokumentu
+\documentclass{extarticle}  %typ dokumentu
 \usepackage[utf8]{inputenc} %rodzaj czcionki
 \usepackage{geometry} %poprawienie marginesów
 \usepackage{polski} %polskie znaki
@@ -10,21 +10,34 @@
 \usepackage{graphicx} %tabela
 \usepackage{float} %tabela
 \usepackage{diagbox} % 2 dane w jednym prostokącie
-\usepackage{amsmath} % Matma
-%\usepackage{blindtext} %
+\usepackage{amsmath, amsthm, amssymb, bbm} % Matma
+%\usepackage{blindtext} 
 %\usepackage{enumitem}
 \usepackage{tikz} %rysowanie
 \usepackage{fancyhdr} %headery i footery
 \usepackage{circuitikz} %schematy elektryczne
-%\usetikzlibrary{arrows}
+
+%DO SPRAWDZENIA (używane przez profesjonalistów)
+% \usepackage{indentfirst}
+% \usepackage{exscale}
+% \usepackage{hyperref}
+% \usepackage{eurosym}
+% \usepackage{textcomp}
+% \usepackage{mathrsfs}
+% \usepackage{amscd}
+
+
 \graphicspath{{pictures/}}
 \geometry{margin=0.7in}
 % \textbf{pogrubienie}  \textit{kursywa}    \underline{podkreślenie}    
 
 \pagestyle{fancy}
 \fancyhf{}
-%--------------------------------------------------------------
-\def\tytul{Narzędzia pomiarowe} %<<<Tutaj wpisz tytuł ćwiczenia
+%-----------------------SEKCJA DANYCH--------------------------
+\def\tytul{Narzędzia pomiarowe} %<<<tytuł ćwiczenia
+\def\nrcw{1} %<<<numer cwiczenia
+\def\data{\today} %data
+%JEZELI COS JESZCZE POTRZEBA W TEJ SEKCJI TO POINFORMOWAĆ
 %--------------------------------------------------------------
 \begin{document}
 
@@ -40,21 +53,12 @@
 
         \begin{tabular}[c]{@{}c@{}}Byczko Maciej\\Malek Jan\\Maziec Michał\end{tabular}&
         \begin{tabular}[c]{@{}c@{}}Prowadzący:\\ Mgr Inż. Monika Prucnal\end{tabular} &
-        \begin{tabular}[c]{@{}c@{}}Numer ćwiczenia\\
-        %----------------------------------------
-            1 %<<<tutaj wpisz numer ćwiczenia
-        %----------------------------------------
-        \end{tabular} \\ \hline
-        \begin{tabular}[c]{@{}c@{}}Grupa nr.\\
-        %----------------------------------------
-            1 %<<<tutaj wpisz numer grupy
-        %----------------------------------------    
+        \begin{tabular}[c]{@{}c@{}}Numer ćwiczenia\\\nrcw \end{tabular} \\ \hline
+        \begin{tabular}[c]{@{}c@{}}Grupa nr.\\1
         \end{tabular} & \begin{tabular}[c]{@{}c@{}}Temat ćwiczenia:\\\tytul
-        \end{tabular}&Ilość punktów: \\ \hline\begin{tabular}[c]{@{}c@{}}Tydzień Nieparzysty\\ Godzina 11:15-13:00\end{tabular}&\begin{tabular}[c]{@{}c@{}}Data wykonania ćwiczenia:\\
-        %----------------------------------------
-        16 marca 2020 %<<<tutaj wpisz datę
-        %----------------------------------------
-        \end{tabular} &\\ \hline\end{tabular}}
+        \end{tabular}&Ilość punktów: \\ \hline\begin{tabular}[c]{@{}c@{}}Tydzień Nieparzysty\\ 
+        Godzina 11:15-13:00\end{tabular}&\begin{tabular}[c]{@{}c@{}}Data wykonania ćwiczenia:\\
+        \data\end{tabular} &\\ \hline\end{tabular}}
     \end{table}
     % \begin{comment}
     % w części teoretycznej należy zawrzeć tutaj krótki wstęp teoretyczny,spis przyrządów, opis przebiegu doświadczenia, najlepiej w punktach
@@ -107,18 +111,21 @@
                 to (2,-2)
                 to[american controlled current source] (0,-2)
                 to (0,0);
+
                 \draw
                 (3,0)
                 to[ammeter] (5,0)
                 to (5,-2)
                 to[american controlled current source] (3,-2)
                 to (3,0);
+
                 \draw
                 (6,0)
                 to[ohmmeter] (8,0)
                 to (8,-2)
                 to[american controlled current source] (6,-2)
                 to (6,0);
+
             \end{circuitikz}\\
             \centering
             \text{Układy pomiarowe}
@@ -130,7 +137,6 @@
                 \item 
             \end{itemize}
         \subsection{wzory}
-            $\Delta U = \pm \frac{kl \ast U_z}{100}$
 
     \section{Pomiary i obliczenia}
         \subsection{Doświadczenie 1}
@@ -149,7 +155,8 @@
                     \end{tabular}}
                 \end{table}
         \subsection{Obliczenia}
-            Brak obliczeń
+
     \section{Wyniki i Wnioski}
-    Pomiary są dosyć niedokładne z powodu analogowego sposobu dokonywania pomiarów
+    
+
 \end{document}
