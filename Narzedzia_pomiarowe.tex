@@ -15,6 +15,7 @@
 %\usepackage{enumitem}
 \usepackage{tikz} %rysowanie
 \usepackage{fancyhdr} %headery i footery
+\usepackage{circuitikz} %schematy elektryczne
 %\usetikzlibrary{arrows}
 \graphicspath{{pictures/}}
 \geometry{margin=0.7in}
@@ -98,7 +99,29 @@
                 6. &omomierz             &  UT803   &   ---------        \\ \hline
                 \end{tabular}
             \end{table}
-
+        \subsubsection{Schematy pomiarowe}
+            \begin{circuitikz} 
+                \draw 
+                (0,0) 
+                to[voltmeter] (2,0)
+                to (2,-2)
+                to[american controlled current source] (0,-2)
+                to (0,0);
+                \draw
+                (3,0)
+                to[ammeter] (5,0)
+                to (5,-2)
+                to[american controlled current source] (3,-2)
+                to (3,0);
+                \draw
+                (6,0)
+                to[ohmmeter] (8,0)
+                to (8,-2)
+                to[american controlled current source] (6,-2)
+                to (6,0);
+            \end{circuitikz}\\
+            \centering
+            \text{Układy pomiarowe}
         \subsection{przebieg ćwiczenia}
             \begin{itemize}
                 \item 
@@ -111,12 +134,7 @@
 
     \section{Pomiary i obliczenia}
         \subsection{Doświadczenie 1}
-            \subsubsection{Schemat pomiarowy}
-                \begin{figure}[H]
-                    \centering
-                    \includegraphics{zas-woltanal}
-                    \caption{schemat pomiarowy}
-                \end{figure}
+            
             \subsubsection{Pomiary}
                 \begin{table}[H]
                     \centering
