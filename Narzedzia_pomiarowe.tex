@@ -174,8 +174,8 @@
                     \resizebox{\textwidth}{!}{%
                     \begin{tabular}{|c|c|c|c|c|c|c|c|}
                         \hline
-                        Nr. & $Uz{[}V{]}$ & $\alpha$& $\alpha{max}$ & $U{[}V{]}$ & $\pm \Delta U${[}V{]} & $\delta U${[}\%{]} & $[U-\Delta ; U+\Delta U] $ \\ \hline
-                        1. & 30  & 6  & 75 & 2,4 & 0,15   & 3,125 & $[2,2 ; 2,6]$ \\ \hline
+                        Nr. & $Uz{[}V{]}$ & $\alpha$& $\alpha{max}$ & $U_v{[}V{]}$ & $\pm \Delta U${[}V{]} & $\delta U[\%]$ & $[U-\Delta ; U+\Delta U] $ \\ \hline
+                        1. & 30  & 6  & 75 & 2,4 & 0,15   & 6,25 & $[2,2 ; 2,6]$ \\ \hline
                         2. & 15  & 11 & 75 & 2,2 & 0,075  & 3,409 & $[2,32 ; 2,48]$ \\ \hline
                         3. & 7,5 & 23 & 75 & 2,3 & 0,0375 & 1,630 & $[2,36 ; 2,44]$ \\ \hline
                         4. & 3   & 58 & 75 & 2,32 & 0,015 & 0,647 & $[2,38 ; 2,42]$ \\ \hline
@@ -190,9 +190,21 @@
                     \item $\delta U${[}\%{]} - Względny błąd pomiaru
                     \item $[U-\Delta ; U+\Delta U] $ - Przedział zawierający wartość prawdziwą
                 \end{itemize}
-        \subsection{Obliczenia}
+            \subsubsection{Wzory i przykładowe obliczenia}
+                Napięcie wskazane przez woltomierz - $U_v=\frac{\alpha}{\alpha_{max}}*U_z$\\
+                Bezwzględny błąd pomiaru - $ \Delta U$=$\frac{Klasa*U_z}{100}$\\
+                Względny błąd pomiaru - $\delta U[\%]=\frac{\Delta U_v}{U_v}$\\
+                Przykładowe obliczenia dla pomiaru nr.1:\\
+                $U_v=\frac{6}{75}\ast 30=2,4V \ \ \ \Delta U_v=\frac{0,5\ast 30}{100}=0,15V \ \ \ \delta U=\frac{0,15}{30}=6,25\%$
 
     \section{Wyniki i Wnioski}
     
 
 \end{document}
+
+
+
+
+
+
+
