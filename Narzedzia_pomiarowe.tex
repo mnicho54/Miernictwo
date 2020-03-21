@@ -18,12 +18,13 @@
 \usepackage{fancyhdr} %headery i footery
 \usepackage{circuitikz} %schematy elektryczne
 
+\usepackage{textcomp}
+
 %DO SPRAWDZENIA (używane przez profesjonalistów)
 % \usepackage{indentfirst}
 % \usepackage{exscale}
 % \usepackage{hyperref}
 % \usepackage{eurosym}
-% \usepackage{textcomp}
 % \usepackage{mathrsfs}
 % \usepackage{amscd}
 
@@ -107,15 +108,15 @@
                 \centering
                 \begin{tabular}{|c|c|c|c|}
                 \hline
-                Lp.&Przyrząd             &  Model   & Klasa przyrządu    \\ \hline
-                1. &Zasilasz             & TYP 5121 &   ---------        \\ \hline
-                2. &Woltomierz analogowy &   LM-3   &      0.5           \\ \hline
-                3. &Woltomierz cyfrowy   &  UT803   &   ---------        \\ \hline
-                4. &Amperomierz analogowy&   LM-3   &      0.5           \\ \hline
-                5. &Amperomierz cyfrowy  &  UT803   &   ---------        \\ \hline
-                6. &omomierz             &  UT803   &   ---------        \\ \hline
-                7. &Dekada rezystorowa   &  ------  &  512$\Omega$       \\ \hline
-                8. &Rezystor wzorcowy    &  ------  &      0.01          \\ \hline
+                Lp.&Przyrząd             &  Model   & Klasa przyrządu/dokładność             \\ \hline
+                1. &Zasilasz             & TYP 5121 &   ---------                            \\ \hline
+                2. &Woltomierz analogowy &   LM-3   &      0.5                               \\ \hline
+                3. &Woltomierz cyfrowy   &  UT803   &  $\pm(0.3\% +2)$/$\pm(0.5\% +2)$       \\ \hline
+                4. &Amperomierz analogowy&   LM-3   &      0.5                               \\ \hline
+                5. &Amperomierz cyfrowy  &  UT803   & $\pm(0.5\% +3)$/$\pm(0.8\% +3)$        \\ \hline
+                6. &omomierz             &  UT803   & $\pm(0.8\% +3)+kable$/$\pm(0.5\% +2)$  \\ \hline
+                7. &Dekada rezystorowa   &  ------  &  512$\Omega$                           \\ \hline
+                8. &Rezystor wzorcowy    &  ------  &      0.01                              \\ \hline
                 \end{tabular}
             \end{table}
             
@@ -152,35 +153,29 @@
             \end{circuitikz}\\
             Kolejno schematy przedstawiają sposób podłączenia: 1.Woltomierza, 2.Amperomierza, 3.Omomierza, 4.Rezystora
 
-        \subsection{przebieg ćwiczenia}
-            \begin{itemize}
-                \item 
-                
-            \end{itemize}
-        \subsection{wzory}
-
     \section{Pomiary i obliczenia}
         \subsection{Pomiar woltomierzem}
             \subsubsection{Przebieg ćwiczenia}
                 Pomiar wartosci napiecia zródła bez uwzglednienia rezystancji wewnetrznej za
                 pomoca woltomierza analogowego oraz cyfrowego dla róznych
                 zakresów. Obliczenie wzglednych i bezwzglednych błedów pomiarowych.
-                Napiecie ustawione na zródle napiecia: \textbf{3V}.
+                Napiecie ustawione na zródle napiecia: \textbf{$\sim$2V}.
             
-            \subsubsection{Pomiary}
+            \subsubsection{Pomiary,wzory i przykładowe obliczenia}
                 \begin{table}[H]
-                    \caption{Wyniki pomiarowe oraz błędy pomiarowe dla ustalonego napięcia 3V }
+                    \caption{Wyniki pomiarowe oraz błędy pomiarowe dla ustalonego napięcia $\sim$ 2V dla woltomierza analogowego}
                     \centering
                     \resizebox{\textwidth}{!}{%
                     \begin{tabular}{|c|c|c|c|c|c|c|c|}
                         \hline
-                        Nr. & $Uz{[}V{]}$ & $\alpha$& $\alpha{max}$ & $U_v{[}V{]}$ & $\pm \Delta U${[}V{]} & $\delta U[\%]$ & $[U-\Delta ; U+\Delta U] $ \\ \hline
+                        Nr. & $Uz{[}V{]}$ & $\alpha$& $\alpha{max}$ & $U{[}V{]}$ & $\Delta U${[}V{]} & $\delta U[\%]$ & $[U-\Delta U ; U+\Delta U] $ \\ \hline
                         1. & 30  & 6  & 75 & 2.4 & 0.15   & 6.25 & $[2.2 ; 2.6]$ \\ \hline
                         2. & 15  & 11 & 75 & 2.2 & 0.075  & 3.409 & $[2.32 ; 2.48]$ \\ \hline
                         3. & 7.5 & 23 & 75 & 2.3 & 0.0375 & 1.630 & $[2.36 ; 2.44]$ \\ \hline
                         4. & 3   & 58 & 75 & 2.32 & 0.015 & 0.647 & $[2.38 ; 2.42]$ \\ \hline
                     \end{tabular}}
                 \end{table}
+
                 \underline{Opis oznaczeń:}
                 \begin{itemize}
                     \item $Uz{[}V{]}$ - Zakres woltomierza
@@ -190,13 +185,47 @@
                     \item $\delta U${[}\%{]} - Względny błąd pomiaru
                     \item $[U-\Delta ; U+\Delta U] $ - Przedział zawierający wartość prawdziwą
                 \end{itemize}
-            \subsubsection{Wzory i przykładowe obliczenia}
-                Napięcie wskazane przez woltomierz - $U_v=\frac{\alpha}{\alpha_{max}}*U_z$\\
-                Bezwzględny błąd pomiaru - $ \Delta U$=$\frac{Klasa*U_z}{100}$\\
-                Względny błąd pomiaru - $\delta U[\%]=\frac{\Delta U_v}{U_v}$\\
-                Przykładowe obliczenia dla pomiaru nr.1:\\
-                $U_v=\frac{6}{75}\ast 30=2.4V \ \ \ \Delta U_v=\frac{0.5\ast 30}{100}=0.15V \ \ \ \delta U=\frac{0.15}{2.4}\ast 100\%=6.25\%$
-            
+                \underline{Wzory:}
+                \begin{itemize}
+                    \item Napięcie wskazane przez woltomierz - $U=\frac{\alpha}{\alpha_{max}}*U_z$
+                    \item Bezwzględny błąd pomiaru - $ \Delta U$=$\frac{Klasa*U_z}{100}$
+                    \item Względny błąd pomiaru - $\delta U[\%]=\frac{\Delta U}{U}$
+                \end{itemize}
+
+                \underline{Przykładowe obliczenia dla pomiaru nr.1:}\\
+                $U=\frac{6}{75}\ast 30=2.4V \ \ \ \Delta U=\frac{0.5\ast 30}{100}=0.15V \ \ \ \delta U=\frac{0.15}{2.4}\ast 100\%=6.25\%$\\
+
+                \begin{table}[H]
+                    \caption{Wyniki pomiarowe oraz błędy pomiarowe dla ustalonego napięcia $\sim$2V dla woltomierza cyfrowego}
+                    \centering
+                    \resizebox{\textwidth}{!}{%
+                    \begin{tabular}{|c|c|c|c|c|c|}
+                        \hline
+                        Nr. & $Uz{[}V{]}$ & $U{[}V{]}$ & $\Delta U${[}V{]} & $\delta U[\%]$ & $[U-\Delta U ; U+\Delta U] $ \\ \hline
+                        1. & 6    & 2.288 & 0.06   &  & $[ ; ]$ \\ \hline
+                        2. & 60   & 2.29  & 0.6    &  & $[ ; ]$ \\ \hline
+                        3. & 600  & 2.3   & 6      &  & $[ ; ]$ \\ \hline
+                        4. & 1000 & 2     & 10     &  & $[ ; ]$ \\ \hline
+                    \end{tabular}}
+                \end{table}            
+
+                \underline{Opis oznaczeń:}
+                \begin{itemize}
+                    \item $Uz{[}V{]}$ - Zakres woltomierza
+                    \item $U{[}V{]}$ - Napięcie wskazane przez woltomierz
+                    \item $\pm \Delta U${[}V{]} - Bezwzględny błąd pomiaru
+                    \item $\delta U${[}\%{]} - Względny błąd pomiaru
+                    \item $[U-\Delta ; U+\Delta U] $ - Przedział zawierający wartość prawdziwą
+                \end{itemize}
+                \underline{Wzory:}
+                \begin{itemize}
+                    \item Napięcie wskazane przez woltomierz - $U=\frac{\alpha}{\alpha_{max}}*U_z$
+                    \item Bezwzględny błąd pomiaru - $\Delta U=\pm(a_{\%}X+n\Delta _r)$
+                    \item Względny błąd pomiaru - $\delta U[\%]=\frac{\Delta U}{U}$
+                \end{itemize}   
+                \underline{Przykładowe obliczenia dla pomiaru nr.1:}\\
+                $\Delta U=\pm 3\%*2.288+2*6$
+                
             \subsubsection{Wnioski}
                 Biorąc pod uwagę obliczone wartosci błedów, nietrudno jest zauważyć jak ważne
                 jest odpowiednie wyskalowanie mnożników przyrzadu w stosunku do wartosci mierzonej. 
