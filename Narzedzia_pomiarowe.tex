@@ -1,9 +1,5 @@
-%link do tworzenia tabeli https://tablesgenerator.com
-%symbole matematyczne: https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
-%narzedzia matematyczne: https://en.wikibooks.org/wiki/LaTeX/Mathematics
-%krótkie podpowiedzi http://www.mif.pg.gda.pl/homepages/sylas/students/wdi/doc/latex-sciaga.html
-%symbole do schematów: http://texdoc.net/texmf-dist/doc/latex/circuitikz/circuitikzmanual.pdf
-\documentclass{extarticle}  %typ dokumentu
+%!TEX program = xelatex
+\documentclass[a4paper,13pt]{extarticle}  %typ dokumentu
 \usepackage[utf8]{inputenc} %rodzaj czcionki
 \usepackage{geometry} %poprawienie marginesów
 \usepackage{polski} %polskie znaki
@@ -12,16 +8,17 @@
 \usepackage{float} %tabela
 \usepackage{diagbox} % 2 dane w jednym prostokącie
 \usepackage{amsmath, amsthm, amssymb, bbm} % Matma
-%\usepackage{blindtext} 
-%\usepackage{enumitem}
 \usepackage{tikz} %rysowanie
 \usepackage{fancyhdr} %headery i footery
 \usepackage{circuitikz} %schematy elektryczne
 
-\usepackage{textcomp}
+%\usepackage{enumitem}
+%\usepackage{blindtext} 
+
 
 %DO SPRAWDZENIA (używane przez profesjonalistów)
 % \usepackage{indentfirst}
+% \usepackage{textcomp}
 % \usepackage{exscale}
 % \usepackage{hyperref}
 % \usepackage{eurosym}
@@ -32,6 +29,14 @@
 \geometry{margin=0.7in}
 \pagestyle{fancy}
 \fancyhf{}
+
+%-----------------------PRZYDATNE LINKI----------------------------------
+%link do tworzenia tabeli https://tablesgenerator.com
+%symbole matematyczne: https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
+%narzedzia matematyczne: https://en.wikibooks.org/wiki/LaTeX/Mathematics
+%krótkie podpowiedzi http://www.mif.pg.gda.pl/homepages/sylas/students/wdi/doc/latex-sciaga.html
+%symbole do schematów: http://texdoc.net/texmf-dist/doc/latex/circuitikz/circuitikzmanual.pdf
+%----------------------------------------------------------------------
 
 %-----------------------SEKCJA DANYCH----------------------------------
     \def\tytul{Narzędzia pomiarowe} %<<< tytuł ćwiczenia
@@ -176,7 +181,7 @@
                     \end{tabular}}
                 \end{table}
 
-                \underline{Opis oznaczeń:}
+                \underline{\textbf{Opis oznaczeń:}}
                 \begin{itemize}
                     \item $Uz{[}V{]}$ - Zakres woltomierza
                     \item $\alpha$ - Odczytane wartość wskazówki
@@ -185,14 +190,14 @@
                     \item $\delta U${[}\%{]} - Względny błąd pomiaru
                     \item $[U-\Delta ; U+\Delta U] $ - Przedział zawierający wartość prawdziwą
                 \end{itemize}
-                \underline{Wzory:}
+                \underline{\textbf{Wzory:}}
                 \begin{itemize}
                     \item Napięcie wskazane przez woltomierz - $U=\frac{\alpha}{\alpha_{max}}*U_z$
                     \item Bezwzględny błąd pomiaru - $ \Delta U$=$\frac{Klasa*U_z}{100}$
                     \item Względny błąd pomiaru - $\delta U[\%]=\frac{\Delta U}{U}$
                 \end{itemize}
 
-                \underline{Przykładowe obliczenia dla pomiaru nr.1:}\\
+                \underline{\textbf{Przykładowe obliczenia dla pomiaru nr.1:}}\\
                 $U=\frac{6}{75}\ast 30=2.4V \ \ \ \Delta U=\frac{0.5\ast 30}{100}=0.15V \ \ \ \delta U=\frac{0.15}{2.4}\ast 100\%=6.25\%$\\
 
                 \begin{table}[H]
@@ -202,28 +207,27 @@
                     \begin{tabular}{|c|c|c|c|c|c|}
                         \hline
                         Nr. & $Uz{[}V{]}$ & $U{[}V{]}$ & $\Delta U${[}V{]} & $\delta U[\%]$ & $[U-\Delta U ; U+\Delta U] $ \\ \hline
-                        1. & 6    & 2.288 & 0.06   &  & $[ ; ]$ \\ \hline
-                        2. & 60   & 2.29  & 0.6    &  & $[ ; ]$ \\ \hline
-                        3. & 600  & 2.3   & 6      &  & $[ ; ]$ \\ \hline
-                        4. & 1000 & 2     & 10     &  & $[ ; ]$ \\ \hline
+                        1. & 6    & 2.288 & 0.0089     & 0.387 & $[ ‭2.2791‬;‭2.2969‬ ]$ \\ \hline
+                        2. & 60   & 2.29  & 0.027      & 1.173 & $[ ‭2.263‬; ‭2.317‬]$ \\ \hline
+                        3. & 600  & 2.3   & 0.207      & 8.996 & $[‭2.093‬ ;‭2.507‬ ]$ \\ \hline
+                        4. & 1000 & 2     & 2.006      & 100.3‬ & $[ ‭-0.006‬; ‭4.006‬]$ \\ \hline
                     \end{tabular}}
                 \end{table}            
 
-                \underline{Opis oznaczeń:}
+                \underline{\textbf{Opis oznaczeń:}}
                 \begin{itemize}
                     \item $Uz{[}V{]}$ - Zakres woltomierza
                     \item $U{[}V{]}$ - Napięcie wskazane przez woltomierz
-                    \item $\pm \Delta U${[}V{]} - Bezwzględny błąd pomiaru
+                    \item $\Delta U${[}V{]} - Bezwzględny błąd pomiaru
                     \item $\delta U${[}\%{]} - Względny błąd pomiaru
                     \item $[U-\Delta ; U+\Delta U] $ - Przedział zawierający wartość prawdziwą
                 \end{itemize}
-                \underline{Wzory:}
+                \underline{\textbf{Wzory:}}
                 \begin{itemize}
-                    \item Napięcie wskazane przez woltomierz - $U=\frac{\alpha}{\alpha_{max}}*U_z$
                     \item Bezwzględny błąd pomiaru - $\Delta U=\pm(a_{\%}X+n\Delta _r)$
                     \item Względny błąd pomiaru - $\delta U[\%]=\frac{\Delta U}{U}$
                 \end{itemize}   
-                \underline{Przykładowe obliczenia dla pomiaru nr.1:}\\
+                \underline{\textbf{Przykładowe obliczenia dla pomiaru nr.1:}}\\
                 $\Delta U=\pm 3\%*2.288+2*6$
                 
             \subsubsection{Wnioski}
@@ -237,7 +241,4 @@
                 woltomierz ten wyswietla wartosc na wyswietlaczu. 
                 Z analogowego nalezy odczytac wartosc odchylenia wskazówki, co powoduje zwiekszenie błedu losowego przez powstanie błędu paralaksy.
     
-
-
-
 \end{document}
