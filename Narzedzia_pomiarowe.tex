@@ -2,6 +2,7 @@
 %symbole matematyczne: https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
 %narzedzia matematyczne: https://en.wikibooks.org/wiki/LaTeX/Mathematics
 %krótkie podpowiedzi http://www.mif.pg.gda.pl/homepages/sylas/students/wdi/doc/latex-sciaga.html
+%symbole do schematów: http://texdoc.net/texmf-dist/doc/latex/circuitikz/circuitikzmanual.pdf
 \documentclass{extarticle}  %typ dokumentu
 \usepackage[utf8]{inputenc} %rodzaj czcionki
 \usepackage{geometry} %poprawienie marginesów
@@ -26,24 +27,35 @@
 % \usepackage{mathrsfs}
 % \usepackage{amscd}
 
-
 \graphicspath{{pictures/}}
 \geometry{margin=0.7in}
-% \textbf{pogrubienie}  \textit{kursywa}    \underline{podkreślenie}    
-
 \pagestyle{fancy}
 \fancyhf{}
-%-----------------------SEKCJA DANYCH--------------------------
-\def\tytul{Narzędzia pomiarowe} %<<<tytuł ćwiczenia
-\def\nrcw{1} %<<<numer cwiczenia
-\def\data{\today} %data
-%JEZELI COS JESZCZE POTRZEBA W TEJ SEKCJI TO POINFORMOWAĆ
-%--------------------------------------------------------------
+
+%-----------------------SEKCJA DANYCH----------------------------------
+    \def\tytul{Narzędzia pomiarowe} %<<< tytuł ćwiczenia
+    \def\nrcw{1} %<<< numer cwiczenia
+    \def\data{\today} %<< data
+    \def\tworcy{Byczko Maciej\\Malek Jan\\Maziec Michał} %<<< autorzy
+    %JEZELI COS JESZCZE POTRZEBA W TEJ SEKCJI TO POINFORMOWAĆ!!!
+%----------------------------------------------------------------------
+
+%-----------------------SEKCJA FORMATOWANIA----------------------------
+    % \textbf{pogrubienie}  \textit{kursywa}    \underline{podkreślenie}
+
+%----------------------------------------------------------------------
+
+%-------------------------------INFO-----------------------------------
+    % w części teoretycznej należy zawrzeć tutaj krótki wstęp teoretyczny,spis przyrządów, opis przebiegu doświadczenia, najlepiej w punktach
+    % oblicznoe dokładności pomiarowe w tabelach, zaokrąglony przedział wyników pomiaru w tabelach, wykorzystane wzory, przykładowe obliczenia
+    % opisane rysunki,schematy pomiarowe, wnioski końcowe !!! UNIKAĆ PUSTYCH PRZESTRZENI!!!
+%----------------------------------------------------------------------
+
 \begin{document}
 
     \lhead{Miernictwo elektroniczne - \tytul}
-    \cfoot{\thepage}
-    \rhead{\thepage}
+    \cfoot{Strona \thepage}
+    \rhead{Strona \thepage}
 
     \begin{table}[H]
         \centering
@@ -51,7 +63,7 @@
         \begin{tabular}{|c|c|c|}
         \hline
 
-        \begin{tabular}[c]{@{}c@{}}Byczko Maciej\\Malek Jan\\Maziec Michał\end{tabular}&
+        \begin{tabular}[c]{@{}c@{}}\tworcy\end{tabular}&
         \begin{tabular}[c]{@{}c@{}}Prowadzący:\\ Mgr Inż. Monika Prucnal\end{tabular} &
         \begin{tabular}[c]{@{}c@{}}Numer ćwiczenia\\\nrcw \end{tabular} \\ \hline
         \begin{tabular}[c]{@{}c@{}}Grupa nr.\\1
@@ -60,11 +72,7 @@
         Godzina 11:15-13:00\end{tabular}&\begin{tabular}[c]{@{}c@{}}Data wykonania ćwiczenia:\\
         \data\end{tabular} &\\ \hline\end{tabular}}
     \end{table}
-    % \begin{comment}
-    % w części teoretycznej należy zawrzeć tutaj krótki wstęp teoretyczny,spis przyrządów, opis przebiegu doświadczenia, najlepiej w punktach
-    % oblicznoe dokładności pomiarowe w tabelach, zaokrąglony przedział wyników pomiaru w tabelach, wykorzystane wzory, przykładowe obliczenia
-    % opisane rysunki,schematy pomiarowe, wnioski końcowe !!! UNIKAĆ PUSTYCH PRZESTRZENI!!!
-    % \end{comment}
+    
     \centering
     \section{Część teoretyczna i opisowa}
         \subsection{cel ćwiczenia}
@@ -73,36 +81,44 @@
                 Używając wykonanych pomiarów możemy poznać niepewności pomiarowe oraz potwierdzić działanie prawa Ohma.
             \end{flushleft}
         \subsection{Wstęp teoretyczny}
+            \subsubsection{Woltomierz}
+                Pomiary są wykonywane na dwóch różnych urządzeniach: woltomierzu analogowym oraz woltomierzu cyfrowym.\\
+                Wartości są mierzone na różnych zakresach pomiarowych aby uzyskać pogląd na niepewności pomiarowe.
+                Niezbedne jest obliczenie pomiarów napięcia, aby uzyskac pewność, ze wynikłe niepewności pomiarowe wiążą się z niedoskonałością sprzętu,
+                nie zaś z niezachodzeniem w danym układzie Prawa Ohma. 
+                Napięcie jest róznicą potencjałów pomiedzy dwoma punktami obwodu elektrycznego. 
+                Wyrażane jest w woltach, oznaczanych jako [V]. 
+                W jednostkach układu SI wolt wyrażany jest jako: $\frac{kg \ast m^2}{A \ast s^3}$.
+                Z kolei natężenie pradu to wielkość ładunku elektrycznego przepływajacego
+                przez dany punkt w ciagu sekundy. Wyrazany jest w amperach [A], 
+                które sa podstawowa jednostka układu SI.
+                \subsubsection{Amperomierz}
+                Cwiczenie skupiało sie wokół pomiarów napiecia pradu elektrycznego.
+                Napiecie jest jedna z podstawowych wielkosci elektrycznych.
+                Zgodnie z definicja jest to róznica potencjałów pomiedzy dwoma punktami obwodu lub pola elektrycznego. 
+                Jednostka napiecia jest wolt [V]. 
+                Jeden wolt jest równy jednemu dzulowi pracy wykonanej podczas przenoszenia jednego kulomba ładunku pomiedzy punktami.
+            \subsubsection{Omomierz}
 
-        \subsection{program poszczególnych pomiarów}
-            \begin{enumerate}
-                \item Pomiar analogowy napięcia
-                \begin{enumerate}
-                    \item
-                \end{enumerate}
-                \item Pomiar cyfrowy napięcia
-                    \begin{enumerate}
-                        \item
-                    \end{enumerate}
-                \item Wzorzec rezystancji
-                    \begin{enumerate}
-                        \item
-                    \end{enumerate}
-            \end{enumerate}
-        \subsection{spis przyrządów}
+            \subsubsection{Pomiar rezystancji}
+
+        \subsection{spis użytych przyrządów}
             \begin{table}[H]
                 \centering
                 \begin{tabular}{|c|c|c|c|}
                 \hline
-                Nr.&Przyrząd             &  Model   & Klasa przyrządu    \\ \hline
+                Lp.&Przyrząd             &  Model   & Klasa przyrządu    \\ \hline
                 1. &Zasilasz             & TYP 5121 &   ---------        \\ \hline
                 2. &Woltomierz analogowy &   LM-3   &      0.5           \\ \hline
                 3. &Woltomierz cyfrowy   &  UT803   &   ---------        \\ \hline
                 4. &Amperomierz analogowy&   LM-3   &      0.5           \\ \hline
                 5. &Amperomierz cyfrowy  &  UT803   &   ---------        \\ \hline
                 6. &omomierz             &  UT803   &   ---------        \\ \hline
+                7. &Dekada rezystorowa   &  ------  &  512$\Omega$       \\ \hline
+                8. &Rezystor wzorcowy    &  ------  &      0.01          \\ \hline
                 \end{tabular}
             \end{table}
+            
         \subsubsection{Schematy pomiarowe}
             \begin{circuitikz} 
                 \draw 
@@ -115,7 +131,7 @@
                 \draw
                 (3,0)
                 to[ammeter] (5,0)
-                to (5,-2)
+                to[vR] (5,-2)
                 to[american controlled current source] (3,-2)
                 to (3,0);
 
@@ -126,34 +142,54 @@
                 to[american controlled current source] (6,-2)
                 to (6,0);
 
+                \draw
+                (9,0)
+                to[ohmmeter] (11,0)
+                to (11,-2)
+                to[R] (9,-2)
+                to (9,0); 
+
             \end{circuitikz}\\
-            \centering
-            \text{Układy pomiarowe}
+            Kolejno schematy przedstawiają sposób podłączenia: 1.Woltomierza, 2.Amperomierza, 3.Omomierza, 4.Rezystora
+
         \subsection{przebieg ćwiczenia}
             \begin{itemize}
                 \item 
-                \item 
-                \item 
-                \item 
+                
             \end{itemize}
         \subsection{wzory}
 
     \section{Pomiary i obliczenia}
-        \subsection{Doświadczenie 1}
+        \subsection{Pomiar woltomierzem}
+            \subsubsection{Przebieg ćwiczenia}
+                Pomiar wartosci napiecia zródła bez uwzglednienia rezystancji wewnetrznej za
+                pomoca woltomierza analogowego oraz cyfrowego dla róznych
+                zakresów. Obliczenie wzglednych i bezwzglednych błedów pomiarowych.
+                Napiecie ustawione na zródle napiecia: \textbf{3V}.
             
             \subsubsection{Pomiary}
                 \begin{table}[H]
+                    \caption{Wyniki pomiarowe oraz błędy pomiarowe dla ustalonego napięcia 3V }
                     \centering
-                    \resizebox{\textwidth}{!}{
-                    \begin{tabular}{|c|c|c|c|}
-                    \hline
-                    Nr. pomiaru & Zakres pomiaru{[}V{]} & Wskazania podziałki{[}max. 75 działek{]} & Wyniki pomiaru{[}V{]} \\ \hline
-                    1. & 30  & 6  & 2.4  \\ \hline
-                    2. & 15  & 11 & 2.2  \\ \hline
-                    3. & 7.5 & 23 & 2.3  \\ \hline
-                    4. & 3   & 58 & 2.32 \\ \hline
+                    \resizebox{\textwidth}{!}{%
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                        \hline
+                        Nr. & $Uz{[}V{]}$ & $\alpha$& $\alpha{max}$ & $U{[}V{]}$ & $\pm \Delta U${[}V{]} & $\delta U${[}\%{]} & $[U-\Delta ; U+\Delta U] $ \\ \hline
+                        1. & 30  & 6  & 75 & 2,4 & 0,15   & 3,125 & $[2,2 ; 2,6]$ \\ \hline
+                        2. & 15  & 11 & 75 & 2,2 & 0,075  & 3,409 & $[2,32 ; 2,48]$ \\ \hline
+                        3. & 7,5 & 23 & 75 & 2,3 & 0,0375 & 1,630 & $[2,36 ; 2,44]$ \\ \hline
+                        4. & 3   & 58 & 75 & 2,32 & 0,015 & 0,647 & $[2,38 ; 2,42]$ \\ \hline
                     \end{tabular}}
                 \end{table}
+                \underline{Opis oznaczeń:}
+                \begin{itemize}
+                    \item $Uz{[}V{]}$ - Zakres woltomierza
+                    \item $\alpha$ - Odczytane wartość wskazówki
+                    \item $U{[}V{]}$ - Napięcie wskazane przez woltomierz
+                    \item $\pm \Delta U${[}V{]} - Bezwzględny błąd pomiaru
+                    \item $\delta U${[}\%{]} - Względny błąd pomiaru
+                    \item $[U-\Delta ; U+\Delta U] $ - Przedział zawierający wartość prawdziwą
+                \end{itemize}
         \subsection{Obliczenia}
 
     \section{Wyniki i Wnioski}
